@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.StringTokenizer;
 
 /*
- * 2021.06.16 daily algo/commit
+ * 2021.06.18 daily algo/commit
  * 
  * Comparator를 이용한 string 정렬
  * 참고 : https://zoonvivor.tistory.com/59
