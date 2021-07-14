@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 2021.07.10 daily algo/commit
  */
 
-public class boj_2004 {
+public class boj_11656 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
