@@ -3,7 +3,8 @@ package Programmers;
 /*
  * 2021.08.23 daily algo/commit
  * 
- * ���α׷��ӽ� Level 2 - BFS/DFS - Ÿ�ٳѹ�
+ * ÇÁ·Î±×·¡¸Ó½º Level 2 - BFS/DFS - Å¸°Ù³Ñ¹ö
+ * 참고 : https://young-9.tistory.com/38
  */
 
 public class prg_TargetNumber_BFS_DFS {
