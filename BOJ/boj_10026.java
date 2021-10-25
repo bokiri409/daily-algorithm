@@ -46,7 +46,7 @@ public class boj_10026 {
 			for(int j=0; j<N; j++) {
 				if(!visited[i][j]) {
 					char color = bgrid[i][j];
-					colorBlind(color, i, j, bgrid, N, visited); // 구역
+					isColorBlind(color, i, j, bgrid, N, visited); // 구역
 					y += 1;
 				}
 			}
@@ -58,7 +58,7 @@ public class boj_10026 {
 			for(int j=0; j<N; j++) {
 				if(!visited[i][j]) {
 					char color = grid[i][j];
-					nonColorBlind(color, i, j, grid, N, visited); // 구역
+					isColorBlind(color, i, j, grid, N, visited); // 구역
 					n += 1;
 				}
 			}
@@ -67,28 +67,29 @@ public class boj_10026 {
 		System.out.println(n + " " + y);
 	}
 	
-	public static void colorBlind(char color, int i, int j, char[][] bgrid, int N, boolean[][] visited) {
+	public static void isColorBlind(char color, int i, int j, char[][] ggrid, int N, boolean[][] visited) {
 		visited[i][j] = true;
 		
 		for(int k=0; k<4; k++) {
 			if(i+dx[k] >= 0 && i+dx[k] < N && j+dy[k] >= 0 && j+dy[k] < N) {
-				if(!visited[i+dx[k]][j+dy[k]] && bgrid[i+dx[k]][j+dy[k]] == color) {
-					colorBlind(color, i+dx[k], j+dy[k], bgrid, N, visited);
+				if(!visited[i+dx[k]][j+dy[k]] && ggrid[i+dx[k]][j+dy[k]] == color) {
+					isColorBlind(color, i+dx[k], j+dy[k], ggrid, N, visited);
 				}
 			}
 		}
 	}
 	
-	public static void nonColorBlind(char color, int i, int j, char[][] grid, int N, boolean[][] visited) {
-		visited[i][j] = true;
-		
-		for(int k=0; k<4; k++) {
-			if(i+dx[k] >= 0 && i+dx[k] < N && j+dy[k] >= 0 && j+dy[k] < N) {
-				if(!visited[i+dx[k]][j+dy[k]] && grid[i+dx[k]][j+dy[k]] == color) {
-					nonColorBlind(color, i+dx[k], j+dy[k], grid, N, visited);
-				}
-			}
-		}
-	}
+	// 행렬을 따로 만들었기 때문에 함수는 하나만 있으면 된다.
+//	public static void nonColorBlind(char color, int i, int j, char[][] grid, int N, boolean[][] visited) {
+//		visited[i][j] = true;
+//		
+//		for(int k=0; k<4; k++) {
+//			if(i+dx[k] >= 0 && i+dx[k] < N && j+dy[k] >= 0 && j+dy[k] < N) {
+//				if(!visited[i+dx[k]][j+dy[k]] && grid[i+dx[k]][j+dy[k]] == color) {
+//					nonColorBlind(color, i+dx[k], j+dy[k], grid, N, visited);
+//				}
+//			}
+//		}
+//	}
 	
 }
